@@ -1,31 +1,56 @@
 
-let elements = ['paper', 'rock', 'scissors'];
+let element = ['paper', 'rock', 'scissors'];
 // get choice from the computer
 function getComputerChoice() {
-return computerElements = elements[Math.floor(Math.random() * elements.length)];
-
+return element[Math.floor(Math.random() * element.length)];
 }
 
-let playerElement = String(window.prompt("Choose paper,rock or scissors", ""));
+const computerElement = getComputerChoice(element);
+
+
+// player choose      his weapon
+//let playerWon;
+//let computerWon;
+
+let playerElement = window.prompt("Choose paper,rock or scissors", "");
+
+function playRound(playerElement, computerElement)
 {
-if (playerElement.toLowerCase == "scissors" && computerElements == "paper") 
-return String("You Won! scissors beats paper");
+//player win
+if (playerElement.toLowerCase() == "scissors" && computerElement == "paper")
+{
+return "You Won! scissors beats paper";
+}
+else if (playerElement.toLowerCase() == "rock" && computerElement == "scissors")
+{
+return "You Won! rock beats scissors";
+}
+else if (playerElement.toLocaleLowerCase() == "paper" && computerElement == "rock")
+{
+return "You Won! paper beats rock";
+//player loose
+}
+else if (playerElement.toLowerCase() == "scissors" && computerElement == "rock")
+{
+return "You Lose! rock beats scissors";
+}
 
-else if (playerElement.toLowerCase == "scissors" && computerElements == "rock")
-return String("You Lose! rock beats scissors");
+else if (playerElement.toLowerCase() == "rock" && computerElement == "paper")
+{
+return "You Lose! paper beats rock";
+}
 
-else if (playerElement.toLowerCase == "rock" && computerElements == "paper")
-return String("You Loose! paper beats rock");
-
-else if (playerElement.toLowerCase == "rock" && computerElements == "scissors")
-return String("You Won! rock beats scissors");
-
-else if (playerElement.toLocaleLowerCase == "paper" && computerElements == "rock")
-return String("You Won! paper beats rock");
-
-else if (playerElement.toLowerCase == "paper" && computerElements == "scissors")
-return String ("You Loose! Scissors beats paper");
-
-else if return String ("Draw");
+else if (playerElement.toLowerCase() == "paper" && computerElement == "scissors")
+{
+return "You Lose! Scissors beats paper";
+}
+// if player element is equal computer element
+else  if (computerElement == playerElement.toLocaleLowerCase())
+{
+return ("Draw");
+}
 
 }
+
+console.log(playRound(computerElement, playerElement))
+
