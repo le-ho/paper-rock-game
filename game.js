@@ -1,56 +1,133 @@
+//game
+let computerElement; // variable to store getComputerChoice in
+let playerElement; // variable  to store getPlayerChoice in
 
-let element = ['paper', 'rock', 'scissors'];
-// get choice from the computer
+let element = ['paper', 'rock', 'scissors']; // elements for computer to choose from
+// function designed to get choice from the computer
 function getComputerChoice() {
-return element[Math.floor(Math.random() * element.length)];
+computerElement = element[Math.floor(Math.random() * element.length)];
+return computerElement;
 }
 
-const computerElement = getComputerChoice(element);
+// get choice from the player by typing it in the window
+function getPlayerChoice() {
+
+playerChoice = window.prompt("Choose paper,rock or scissors", "");
+   
+return playerElement = (playerChoice.toLowerCase());
+}
 
 
-// player choose      his weapon
-//let playerWon;
-//let computerWon;
 
-let playerElement = window.prompt("Choose paper,rock or scissors", "");
+let playerWin = 0; // variable to store number of player wins
+let computerWin = 0; // variable to store number of computer wins
+
+// single round between player and computer
 
 function playRound(playerElement, computerElement)
 {
-//player win
-if (playerElement.toLowerCase() == "scissors" && computerElement == "paper")
+// check if player win if yes add count to playerWin 
+if (playerElement == "scissors" && computerElement == "paper")
+
 {
-return "You Won! scissors beats paper";
+    playerWin++;
+return ("You Won! scissors beats paper");
+
 }
-else if (playerElement.toLowerCase() == "rock" && computerElement == "scissors")
+else if (playerElement == "rock" && computerElement == "scissors")
 {
-return "You Won! rock beats scissors";
+    playerWin++; 
+return ("You Won! rock beats scissors");
 }
-else if (playerElement.toLocaleLowerCase() == "paper" && computerElement == "rock")
+else if (playerElement == "paper" && computerElement == "rock")
 {
-return "You Won! paper beats rock";
-//player loose
+    playerWin++;
+return ("You Won! paper beats rock");
+//player loose add count to computerWin
 }
-else if (playerElement.toLowerCase() == "scissors" && computerElement == "rock")
+else if (playerElement == "scissors" && computerElement == "rock")
 {
-return "You Lose! rock beats scissors";
+    computerWin++;
+return ("You Lose! rock beats scissors");
 }
 
-else if (playerElement.toLowerCase() == "rock" && computerElement == "paper")
+else if (playerElement == "rock" && computerElement == "paper")
 {
-return "You Lose! paper beats rock";
+    computerWin++;
+    return ("You Lose! paper beats rock");
 }
 
-else if (playerElement.toLowerCase() == "paper" && computerElement == "scissors")
+else if (playerElement == "paper" && computerElement == "scissors")
 {
-return "You Lose! Scissors beats paper";
+    computerWin++;
+    return ("You Lose! Scissors beats paper");
 }
 // if player element is equal computer element
-else  if (computerElement == playerElement.toLocaleLowerCase())
+else  if (computerElement == playerElement)
 {
-return ("Draw");
+return ("It's a tie");
 }
 
 }
 
-console.log(playRound(computerElement, playerElement))
+// play 5 games in the row, one woh get 3 wins in round win the game
+
+function game()
+{
+    getPlayerChoice(playerElement);
+    getComputerChoice();
+    playRound(playerElement, computerElement);
+
+    console.log('you choose', playerElement);
+    console.log('number of your wins', playerWin);
+    console.log('computer choose', computerElement);
+    console.log('number of computer wins',computerWin);
+
+    getPlayerChoice(playerElement);
+    getComputerChoice();
+    playRound(playerElement, computerElement);
+
+    console.log('you choose', playerElement);
+    console.log('number of your wins', playerWin);
+    console.log('computer choose', computerElement);
+    console.log('number of computer wins',computerWin);
+
+    getPlayerChoice(playerElement);
+    getComputerChoice();
+    playRound(playerElement, computerElement);
+
+    console.log('you choose', playerElement);
+    console.log('number of your wins', playerWin);
+    console.log('computer choose', computerElement);
+    console.log('number of computer wins',computerWin);
+
+    getPlayerChoice(playerElement);
+    getComputerChoice();
+    playRound(playerElement, computerElement);
+
+    console.log('you choose', playerElement);
+    console.log('number of your wins', playerWin);
+    console.log('computer choose', computerElement);
+    console.log('number of computer wins',computerWin);
+
+    } 
+
+// coutning wins, 5 games in the row, wins one who have 3 wins first
+
+function gameResult(computerWin, playerWin) 
+{
+if (computerWin = 3)
+   {
+   return ("Computer Win 3 times");
+    }
+if (playerWin = 3)
+   {
+       return ("You Win! 3 times");
+    }
+}
+
+console.log(game());
+console.log(gameResult());
+
+
 
