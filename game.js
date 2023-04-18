@@ -83,14 +83,7 @@ function game()
     console.log('computer choose', computerElement);
     console.log('number of computer wins',computerWin);
 
-    getPlayerChoice(playerElement);
-    getComputerChoice();
-    playRound(playerElement, computerElement);
-
-    console.log('you choose', playerElement);
-    console.log('number of your wins', playerWin);
-    console.log('computer choose', computerElement);
-    console.log('number of computer wins',computerWin);
+    gameResult(computerWin, playerWin) 
 
     getPlayerChoice(playerElement);
     getComputerChoice();
@@ -101,6 +94,8 @@ function game()
     console.log('computer choose', computerElement);
     console.log('number of computer wins',computerWin);
 
+    gameResult(computerWin, playerWin) 
+
     getPlayerChoice(playerElement);
     getComputerChoice();
     playRound(playerElement, computerElement);
@@ -109,6 +104,32 @@ function game()
     console.log('number of your wins', playerWin);
     console.log('computer choose', computerElement);
     console.log('number of computer wins',computerWin);
+
+    gameResult(computerWin, playerWin) 
+
+    getPlayerChoice(playerElement);
+    getComputerChoice();
+    playRound(playerElement, computerElement);
+
+    console.log('you choose', playerElement);
+    console.log('number of your wins', playerWin);
+    console.log('computer choose', computerElement);
+    console.log('number of computer wins',computerWin);
+
+    gameResult(computerWin, playerWin) 
+
+    getPlayerChoice(playerElement);
+    getComputerChoice();
+    playRound(playerElement, computerElement);
+
+    console.log('you choose', playerElement);
+    console.log('number of your wins', playerWin);
+    console.log('computer choose', computerElement);
+    console.log('number of computer wins',computerWin);
+
+    gameResult(computerWin, playerWin) 
+
+
 
     } 
 
@@ -116,18 +137,23 @@ function game()
 
 function gameResult(computerWin, playerWin) 
 {
-if (computerWin = 3)
+    if (computerWin >= 3)
    {
-   return ("Computer Win 3 times");
+   return ("Computer Win the game");
     }
-if (playerWin = 3)
+else if (playerWin >= 3)
    {
-       return ("You Win! 3 times");
+       return ("You Win! the game!");
     }
+else if (playerWin < 3 || computerWin < 3)
+{
+    return ("play again");
+}
+
 }
 
 console.log(game());
-console.log(gameResult());
+console.log(gameResult(computerWin, playerWin));
 
 
 
